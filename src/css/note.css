@@ -1,0 +1,26 @@
+.note-main-container{
+    
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 1rem;
+    border: 1px rgb(158, 152, 152)  solid;
+    background-color:rgb(158, 152, 152)  ;
+    padding: .5rem;
+    border-radius: 5px;
+
+}
+.note-main-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  color: white;
+}
+.note-main-container:hover{
+    /* cursor: not-allowed; */
+}
+.edit-button{
+    cursor: pointer;
+    
+
+}

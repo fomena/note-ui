@@ -1,0 +1,73 @@
+.note-record-main-container{
+    display: flex;
+    width: 100%;
+    
+    justify-content: center;
+    align-content: center;
+    background-image: url('/public/images/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 650px;
+    
+
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: black;
+    opacity: 90%;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 20%;
+    position: relative;
+    padding-left: 1rem;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+
+.textfeild{
+    border: 1px blue solid;
+    border-radius: 5px;
+    width: 90%;
+    height: 50px;
+    margin-top: 2rem;
+    
+    padding-left:1rem;
+    padding-right:1rem;
+    position: relative;
+}
+.header-form{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-transform: uppercase;
+}
+
+.submit{
+    background-color: white;
+    color: rgb(66, 190, 28);
+    width: 20%;
+    height: 50px;
+    text-transform: uppercase;
+    border: 1px rgb(66, 190, 28) solid;
+    border-radius: 5px;
+
+    
+
+}
+.submit:hover{
+   cursor: pointer;
+}
+.error-message{
+    color: red;
+    justify-content: center;
+}
+.text-area-content{
+    width: 97%;
+    height: 40vh;
+}
