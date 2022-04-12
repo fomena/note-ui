@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 import './../css/login.css';
 export default function Login() {
@@ -23,17 +24,22 @@ export default function Login() {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        
+        // e.preventDefault();
+        // axios.post(`http://localhost:8080/users/`, { user })
+        // .then(res => {
+        //   console.log(res);
+        //   console.log(res.data);
+        // });
+    // }
         console.log('valeur du formulaire', validForm)
-     history("/");
+     history("/home");
         
     }
 
 
 
     return (
-        <form onSubmit={handleSubmit} action="/home">
+        <form onSubmit={handleSubmit}>
             <div className="login-main-container">
                 <div className="form-container">
 

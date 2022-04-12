@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './../css/note-record.css';
+import axios from 'axios';
+
 export default function NoteRecord() {
 
     const [input, setInput] = React.useState({ textNote: "" })
@@ -12,13 +14,20 @@ export default function NoteRecord() {
     }
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        let note={
+            userId:"625476fc5ea4d2b5fe8b32c0",
+            textNote:input.textNote
+        }
+        console.log('note', note)
+        axios.post(`http://localhost:5000/notes/`, { note })
+        .then(res => {
+          
+          console.log(res.data);
+        })
 
-        
-            setValidForm(true)
-            console.log('valeur du formulaire', input)
-            history("/");
+            history("/home");
         
 
 
