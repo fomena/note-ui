@@ -2,19 +2,21 @@
     
     display: flex;
     flex-direction: column;
-    
     margin-bottom: 1rem;
     border: 1px rgb(158, 152, 152)  solid;
     background-color:rgb(158, 152, 152)  ;
-    padding: .5rem;
+    
     border-radius: 5px;
+    width:300px;
+
 
 }
 .note-main-element{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-  color: white;
+    color: white;
+    margin-top: 10%;
 }
 .note-main-container:hover{
     /* cursor: not-allowed; */
@@ -23,4 +25,17 @@
     cursor: pointer;
     
 
+}
+.edition{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    background-color: black;
+    padding: .5rem;
+    margin-top: 10%;
+
+}
+.text-content{
+    padding: 1rem;
 }

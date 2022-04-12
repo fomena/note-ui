@@ -12,9 +12,16 @@
     justify-content: center;
     align-items: center;
 
+
 }
 .home-note-items{
-    padding-left: 2rem;
+	display: flex;
+    padding-left: 1rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-around;
+	
 }
 
 .float{
