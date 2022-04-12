@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { userinfo } from "../services/shareddata";
 import './../css/nav-bar.css'
 
 
-export default function NavBar() {
 
+export default function NavBar(props) {
+   
     return (
 
         <div className="nav-main-container">
@@ -12,7 +14,7 @@ export default function NavBar() {
             </div>
             <div className="user-profile">
                 <div>
-                    <h5>joelfomena@gmail.com</h5>
+                    <h5>{userinfo.email}</h5>
                 </div>
 
             </div>

@@ -16,7 +16,7 @@ export default function Routing(props) {
 
                 <Route path="login" element={<Login />} />
                 <Route path="home" element={<Home/>} />
-
+                
                 <Route path="register" element={<Register />} />
                 <Route path="add-note" element={<NoteRecord />} />
 

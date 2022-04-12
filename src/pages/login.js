@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import { userinfo } from "../services/shareddata";
 
 import './../css/login.css';
 export default function Login() {
 
     const [input, setInput] = React.useState({ email: "", password: "" })
     const [validForm, setValidForm] = React.useState(false)
+    
     let history = useNavigate();
 
     const handleChange = (e) => {
@@ -24,14 +25,20 @@ export default function Login() {
     }
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // axios.post(`http://localhost:8080/users/`, { user })
-        // .then(res => {
-        //   console.log(res);
-        //   console.log(res.data);
-        // });
-    // }
-        console.log('valeur du formulaire', validForm)
+          
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(input),
+        };
+
+        fetch("http://localhost:5000/auth/", options)
+            .then((response) => response.json())
+            .then((data) => {userinfo.email=data.response.email; userinfo.id=data.response._id; console.log('log', data.response)});
+        
+
      history("/home");
         
     }

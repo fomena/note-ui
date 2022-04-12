@@ -9,7 +9,6 @@ import Routing from "./navigation/routing.js";
 function App() {
   return (
     <div className='app-main-container'>
-      <NavBar />
 
       
         <Routing auth="true" />

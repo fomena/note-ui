@@ -24,6 +24,21 @@ export default function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(input),
+        };
+
+        fetch("http://localhost:5000/users/", options)
+            .then((response) => response.json())
+            .then((data) => console.log('données inserés', data));
+        
+
+
         history("/")
     }
 

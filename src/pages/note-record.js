@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../components/nav-bar";
 import './../css/note-record.css';
-import axios from 'axios';
+
 
 export default function NoteRecord() {
 
@@ -10,25 +11,32 @@ export default function NoteRecord() {
     let history = useNavigate();
     const handleChange = (e) => {
         setInput(value => ({ ...input, [e.target.name]: e.target.value }))
-        console.log('xcccccccvvvv', input)
+        // console.log('xcccccccvvvv', input)
     }
 
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        let note={
-            userId:"625476fc5ea4d2b5fe8b32c0",
-            textNote:input.textNote
+        let note = {
+            userId: "625476fc5ea4d2b5fe8b32c0",
+            textNote: input.textNote
         }
-        console.log('note', note)
-        axios.post(`http://localhost:5000/notes/`, { note })
-        .then(res => {
-          
-          console.log(res.data);
-        })
 
-            history("/home");
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(note),
+        };
+
+        fetch("http://localhost:5000/notes/", options)
+            .then((response) => response.json())
+            .then((data) => console.log('This is your data', data));
         
+
+        history("/home");
+
 
 
     }
@@ -36,7 +44,9 @@ export default function NoteRecord() {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
+            <NavBar/>
+            <form onSubmit={handleSubmit}>
             <div className="note-record-main-container">
                 <div className="form-container">
 
@@ -48,10 +58,6 @@ export default function NoteRecord() {
                         </textarea>
                     </div>
 
-
-
-
-
                     <div>
                         <input className="submit" type="submit" value="Valider" />
                     </div>
@@ -62,6 +68,8 @@ export default function NoteRecord() {
                 </div>
             </div>
         </form>
+        </div>
+       
 
     )
 
