@@ -22,6 +22,8 @@ export default function Register() {
         }
     }
 
+
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -40,6 +42,9 @@ export default function Register() {
 
 
         history("/")
+        console.log('il love solve problems')
+
+
     }
 
 
